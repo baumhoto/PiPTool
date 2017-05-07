@@ -3,15 +3,17 @@ PiPTool is a Safari 10 extension built to add the Picture-in-Picture functionali
 
 This is a fork of the original PiPTool. I found it tedious to create custom logic to inject a PiP-Button into each site, so i decided that i just want to use the button in the Safari-Toolbar to enable Pip. Therefore i removed most of the code and just use a simple mapping of a Regex to a Css-Selector.
 
+```javascript
 urlRegex2cssSelector = {};
 urlRegex2cssSelector['/.*amazon.*.gp.video.detail.*/'] = '#dv-web-player > div > div:nth-child(1) > div.webPlayerElement > div > div.rendererContainer > video:nth-child(2)';
 urlRegex2cssSelector['/.*youtube.*/'] = '#movie_player > div > video';
+```
 
 Regex is used to check if the url matches. If true then the Css-Selector will be used to get the video Element.
 
 Open the website with the video, *then interact with the video once e.g. by clicking pause/play*. After that click on the button in the Safari Toolbar which should send the Video into PiP-Mode.
 
-#currentl supported:
+#currently supported:
 1. Nexflix
 2. Youtube
 3. Amazon Prime Video

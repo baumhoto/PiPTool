@@ -24,9 +24,9 @@
 		<array>
 			<dict>
 				<key>Command</key>
-				<string>togglePipMode</string>
+				<string>enablePipMode</string>
 				<key>Identifier</key>
-				<string>togglePipMode</string>
+				<string>enablePipMode</string>
 				<key>Image</key>
 				<string>images/piptool-menu-icon.png</string>
 				<key>Include By Default</key>
@@ -36,7 +36,7 @@
 				<key>Palette Label</key>
 				<string>PiPTool</string>
 				<key>Tool Tip</key>
-				<string>Enter PiP Search mode</string>
+				<string>Enable Pip Mode</string>
 			</dict>
 		</array>
 	</dict>

@@ -2,7 +2,8 @@
     'use strict';
 
     var togglePipMode,
-        cachedAdditionalDomains;
+        cachedAdditionalDomains,
+        enablePipMode;
 
     /** Handler for the menu button */
     togglePipMode = function () {
@@ -10,11 +11,17 @@
         safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('enterPipMode');
     };
 
+    enablePipMode = function () {
+        // noinspection JSUnresolvedVariable, JSUnresolvedFunction
+        safari.application.activeBrowserWindow.activeTab.page.dispatchMessage('enablePipMode');
+    };
+
     cachedAdditionalDomains = null;
 
     // noinspection JSUnresolvedVariable
     /** Register the menu button command */
-    safari.application.addEventListener('command', togglePipMode, false);
+    // safari.application.addEventListener('command', togglePipMode, false);
+    safari.application.addEventListener('command', enablePipMode, false);
 
     // noinspection JSUnresolvedVariable
     safari.application.addEventListener('message', function (message) {

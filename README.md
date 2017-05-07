@@ -1,15 +1,27 @@
 # PiPTool
 PiPTool is a Safari 10 extension built to add the Picture-in-Picture functionality to the video players that do not have it implemented.
 
-For example, YouTube or DailyMotion don't have the default HTML5 video player, so Safari cannot add the PiP button. This is where PiP Tool comes in place.
+This is a fork of the original PiPTool. I found it tedious to create custom logic to inject a PiP-Button into each site, so i decided that i just want to use the button in the Safari-Toolbar to enable Pip. Therefore i removed most of the code and just use a simple mapping of a Regex to a Css-Selector.
 
-Additionally, the extension comes with a menu button. Just click it and then select any video from the page.
+urlRegex2cssSelector = {};
+urlRegex2cssSelector['/.*amazon.*.gp.video.detail.*/'] = '#dv-web-player > div > div:nth-child(1) > div.webPlayerElement > div > div.rendererContainer > video:nth-child(2)';
+urlRegex2cssSelector['/.*youtube.*/'] = '#movie_player > div > video';
+
+Regex is used to check if the url matches. If true then the Css-Selector will be used to get the video Element.
+
+Open the website with the video, *then interact with the video once e.g. by clicking pause/play*. After that click on the button in the Safari Toolbar which should send the Video into PiP-Mode.
+
+#currentl supported:
+1. Nexflix
+2. Youtube
+3. Amazon Prime Video
+4. Channel9
+5. Gamestar
+
+Edit main.js to add additional ones
 
 ## Installation
-1. Download the extension from here: [https://bfmatei.github.io/extensions/PiPTool.safariextz](https://bfmatei.github.io/extensions/PiPTool.safariextz)
-2. Open the downloaded file
-3. Click trust
-4. Enjoy!
+- Don't have a developer subscription, so no download. You need to clone the repo and build the extension locally.
 
 ## Development
 1. Prerequisites: [Node.js](https://nodejs.org/en/), [Grunt](http://gruntjs.com), [JSCS](http://jscs.info) and [JSHint](http://jshint.com)
@@ -21,7 +33,7 @@ Additionally, the extension comes with a menu button. Just click it and then sel
 Note: you need to use Safari to build the ".safariextz" file. The build command above just generates the files for Safari.
 
 ## Improvements
-- Suggestions?
+- make the mapping from RegEx to Css-Selector user modifyable.
 
 ## Changelog
 ### Version 1.8.2

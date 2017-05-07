@@ -11,7 +11,7 @@ urlRegex2cssSelector['/.*youtube.*/'] = '#movie_player > div > video';
 
 Regex is used to check if the url matches. If true then the Css-Selector will be used to get the video Element.
 
-Open the website with the video, *then interact with the video once e.g. by clicking pause/play*. After that click on the button in the Safari Toolbar which should send the Video into PiP-Mode.
+Open the website with the video, **then interact with the video e.g. by clicking pause and play again**. After that click on the button in the Safari Toolbar which should send the Video into PiP-Mode.
 
 #currently supported:
 1. Nexflix
